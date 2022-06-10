@@ -10,7 +10,7 @@ interface ShopListRepository {
 
     fun deleteShopItem(shopItem: ShopItem)
 
-    fun getShopItem(shopItemId: Int)
+    fun getShopItem(shopItemId: Int): ShopItem
 
     fun getShopList(): LiveData<List<ShopItem>>
 }
