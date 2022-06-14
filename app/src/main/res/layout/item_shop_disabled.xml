@@ -10,7 +10,7 @@
     android:layout_marginTop="4dp"
     android:layout_marginBottom="4dp"
     app:cardCornerRadius="4dp"
-    app:cardElevation="4dp"
+    app:cardElevation="0dp"
     app:cardUseCompatPadding="true">
 
     <LinearLayout
@@ -31,6 +31,7 @@
             tools:text="Помидоры"/>
 
         <TextView
+            android:id="@+id/tv_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
