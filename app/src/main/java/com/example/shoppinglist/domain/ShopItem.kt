@@ -1,6 +1,6 @@
 package com.example.shoppinglist.domain
 
-class ShopItem(
+data class ShopItem(
     var name: String,
     var count: Int,
     var enabled: Boolean,
