@@ -12,10 +12,13 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.shoppinglist.databinding.FragmentShopItemBinding
 import com.example.shoppinglist.domain.ShopItem
 import java.lang.RuntimeException
+import javax.inject.Inject
 
 class ShopItemFragment : Fragment() {
 
-    private lateinit var viewModel: ShopItemViewModel
+    @Inject
+    lateinit var viewModel: ShopItemViewModel
+
     private lateinit var onEditingFinishListener: OnEditingFinishListener
 
     private var _binding: FragmentShopItemBinding? = null
@@ -36,6 +39,7 @@ class ShopItemFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        (requireActivity().application as ShopListApplication).component.inject(this)
         parseParams()
     }
 
@@ -51,7 +55,6 @@ class ShopItemFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(this)[ShopItemViewModel::class.java]
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
